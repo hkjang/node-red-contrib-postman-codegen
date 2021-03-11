@@ -59,6 +59,20 @@ module.exports = function (RED) {
                     results.push(snippet);
                   }
                 });
+              }else{
+                item.item.forEach(function (item){
+                  if (item.request !== undefined){
+                    codegen.convert(language, variant, new sdk.Request(item.request), msg.options, function(error, snippet) {
+                      if (error) {
+                        self.error(error);
+                      }else{
+                        results.push(snippet);
+                      }
+                    });
+                  }else{
+
+                  }
+                });
               }
             });
           }
