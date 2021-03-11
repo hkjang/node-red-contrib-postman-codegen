@@ -37,6 +37,8 @@ module.exports = function (RED) {
         // var request = new sdk.Request(msg.url);  //using postman sdk to create request
         var collection = new sdk.Collection(msg.collection);
         var results = [];
+        // self.error(collection.items.all());
+
         collection.items.all().forEach(function (item) {
           if (item.request !== undefined){
             codegen.convert(language, variant, item.request, msg.options, function(error, snippet) {
@@ -45,6 +47,18 @@ module.exports = function (RED) {
                 self.send(msg);
               }else{
                 results.push(snippet);
+              }
+            });
+          }else{
+            item.toJSON().item.forEach(function (item){
+              if (item.request !== undefined){
+                codegen.convert(language, variant, new sdk.Request(item.request), msg.options, function(error, snippet) {
+                  if (error) {
+                    self.error(error);
+                  }else{
+                    results.push(snippet);
+                  }
+                });
               }
             });
           }
