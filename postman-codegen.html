@@ -1,0 +1,41 @@
+<script type="text/javascript">
+    RED.nodes.registerType('postman-codegen',{
+        category: 'function',
+        defaults: {
+            api: {value:"", required:false},
+            language: {value:"", required:false},
+            variant: {value:"", required:false},
+            name: {value: "postman codegen"}
+        },
+        color: '#FFFFFF',
+        inputs:1,
+        outputs:1,
+        icon: "postman-codegen.png",
+        label: function() {
+            return this.name || "postman codegen";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="postman-codegen">
+    <div class="form-row">
+        <label for="node-input-api"><i class="fa fa-api"></i>api</label>
+        <input type="text" id="node-input-api" placeholder="api">
+    </div>
+    <div class="form-row">
+        <label for="node-input-language"><i class="fa fa-language"></i>language</label>
+        <input type="text" id="node-input-language" placeholder="language">
+    </div>
+    <div class="form-row">
+        <label for="node-input-variant"><i class="fa fa-variant"></i>variant</label>
+        <input type="text" id="node-input-variant" placeholder="variant">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="postman-codegen">
+    <p> postman code generator </p>
+</script>

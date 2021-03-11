@@ -1,0 +1,4 @@
+[
+  "var request = require('request');\nvar options = {\n   'method': 'POST',\n   'url': '{{apiBaseUrl}}/utc/settime',\n   'headers': {\n   },\n   form: {\n      'nation': 'ko-kr',\n      'nation2': 'ko-kr'\n   }\n};\nrequest(options, function (error, response) {\n   if (error) throw new Error(error);\n   console.log(response.body);\n});\n",
+  "var request = require('request');\nvar options = {\n   'method': 'GET',\n   'url': '{{apiBaseUrl}}/utc/now?a=a',\n   'headers': {\n   }\n};\nrequest(options, function (error, response) {\n   if (error) throw new Error(error);\n   console.log(response.body);\n});\n"
+]
