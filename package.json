@@ -37,7 +37,7 @@
   "deprecated": false,
   "description": "postman code generator",
   "homepage": "https://github.com/hkjang/node-red-contrib-postman-codegen#readme",
-  "languages": [
+  "keywords": [
     "node-red",
     "postman",
     "postman-codegen",
